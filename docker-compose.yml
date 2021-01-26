@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+    db:
+        image: postgres
+        restart: always
+        env_file: .env
+        volumes:
+            - ./pgdata:/var/lib/postgresql/data
+        expose:
+            - 5432
+
+    bot:
+        restart: always
+        env_file: .env
+        build:
+            context: ./bot
+            dockerfile: Dockerfile
+        depends_on:
+            - db
+
+    web:
+        build: ./web
+        restart: always
+        build: 
+            context: ./web
+            dockerfile: Dockerfile
+        depends_on:
+            - db
+            - bot
+        env_file:
+            - .env
+        expose:
+            - 8080
+
+    nginx:
+        build: ./nginx
+        restart: always
+        build: 
+            context: ./nginx
+            dockerfile: Dockerfile
+        depends_on:
+            - web
+        volumes:
+            - ./web/web/static/:/app/static/
+        ports:
+            - 80:80

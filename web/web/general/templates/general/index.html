@@ -1,0 +1,70 @@
+{% extends 'general/base.html' %} {% block content %}
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <div class="title">
+                The Interfacer: a bot and API allowing developers to access information about Discord servers and users
+                while ensuring privacy.
+            </div>
+            <a class="button is-link is-large"
+                href="https://discord.com/api/oauth2/authorize?client_id=795059999193038849&permissions=0&scope=bot"><strong>Invite
+                    Interfacer.</strong></a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="block">
+            <article class="message is-info">
+                <div class="message-header">
+                    <p>How can I use the Interfacer for servers?</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                    <ol>
+                        <li>
+                            Invite the interfacer to your server using the link above
+                            <strong>OR</strong> Check that the Interfacer bot is in the server
+                            you'd like to access.
+                        </li>
+                        <li>
+                            Make a request to the API endpoint
+                            <code>/guilds/&lt;guild_id&gt;</code>.
+                        </li>
+                        <li>Get the response!</li>
+                    </ol>
+                </div>
+            </article>
+        </div>
+
+        <div class="block">
+            <article class="message is-info">
+                <div class="message-header">
+                    <p>How can I use the Interfacer for individual users?</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                    <ol>
+                        <li>
+                            Invite the interfacer to your server using the link above
+                            <strong>OR</strong> Check that the Interfacer bot is in the server
+                            you'd like to access.
+                        </li>
+                        <li>
+                            Opt in for usage with the <code>!optin</code> command in Discord.
+                            You can always opt out with <code>!optout</code>.
+                        </li>
+                        <li>
+                            Make a request to the API endpoint
+                            <code>/guilds/&lt;guild_id&gt;/users/&lt;user_id&gt;</code>.
+                        </li>
+                        <li>Get the response!</li>
+                    </ol>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+{% endblock %}

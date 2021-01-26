@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interfacer</title>
+  <link rel="stylesheet" href="/static/bulma.min.css" />
+  <link rel="stylesheet" href="/static/bulma-pageloader.min.css">
+  <script src="https://kit.fontawesome.com/b28262e69d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/static/general/styles.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div class="navbar is-spaced has-shadow">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="https://interfacer.dev" class="navbar-item">
+          <img id="logo" src="/static/img/logo.png" alt="logo" />
+        </a>
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <a class="button is-black is-rounded" href="https://github.com/SuperMaZingCoder/Interfacer">
+              <span class="icon">
+                <i class="fas fa-code-branch"></i>
+              </span>
+              <span>GitHub</span>
+            </a>
+          </div>
+          <div class="navbar-item">
+            <a class="button is-danger is-rounded" href="https://github.com/SuperMaZingCoder/Interfacer/issues">
+              <span class="icon">
+                <i class="fas fa-bug"></i>
+              </span>
+              <span>Issues</span>
+            </a>
+          </div>
+          <div class="navbar-item">
+            <a href="https://discord.com/api/oauth2/authorize?client_id=795059999193038849&permissions=0&scope=bot"
+              class="button is-link is-rounded">
+              <strong>
+                <span class="icon">
+                  <i class="fas fa-robot"></i>
+                </span>
+                <span>Invite Interfacer</span>
+              </strong>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <!-- Content -->
+  <section class="section">
+    <div class="container">{% block content %}{% endblock %}</div>
+  </section>
+  <!-- <script src="/static/jquery-3.5.1.min.js"></script> -->
+  <script src="/static/jquery-3.5.1.min.js"></script>
+  <script src="/static/general/index.js"></script>
+</body>
+
+</html>

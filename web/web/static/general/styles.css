@@ -1,0 +1,13 @@
+#logo {
+    width: 48px;
+    height: 48px;
+    max-height: initial;
+}
+
+.expand {
+    transform: rotate(-45deg);
+}
+
+.hidden {
+    display: none;
+}
