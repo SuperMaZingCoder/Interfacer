@@ -18,7 +18,7 @@ def guild(guild_id: int) -> dict:
     response = requests.get(f"https://discord.com/api/guilds/{guild_id}", headers=headers)
     return response.json()
 
-@api_bp.route("/guilds/<int:guild_id>/members/<member_id>")
+@api_bp.route("/guilds/<int:guild_id>/members/<int:member_id>")
 def member(guild_id: int, member_id: int) -> dict:
     if UserPreferences.query.filter_by(user_id=member_id, guild_id=guild_id).first():
         response = requests.get(f"https://discord.com/api/guilds/{guild_id}/members/{member_id}", headers=headers)
