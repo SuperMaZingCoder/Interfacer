@@ -22,7 +22,7 @@ services:
     web:
         build: ./web
         restart: always
-        build: 
+        build:
             context: ./web
             dockerfile: Dockerfile
         depends_on:
@@ -36,12 +36,14 @@ services:
     nginx:
         build: ./nginx
         restart: always
-        build: 
+        build:
             context: ./nginx
             dockerfile: Dockerfile
         depends_on:
             - web
         volumes:
             - ./web/web/static/:/app/static/
+            - /etc/ssl:/etc/ssl:ro
         ports:
             - 80:80
+            - 443:443
